@@ -18,8 +18,12 @@ import com.klg.testgithub.data.database.model.OrganisationRealm;
 import com.klg.testgithub.ui.Repository.RepositoryActivity;
 import com.klg.testgithub.ui.SearchOrganisation.adapter.CallBackOrganisation;
 import com.klg.testgithub.ui.SearchOrganisation.adapter.SearchAdapter;
+import com.klg.testgithub.util.rx.RxSearch;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import io.reactivex.android.schedulers.AndroidSchedulers;
 
 public class SearchOrganisationFragment extends Fragment implements SearchOrganisationContract.View, CallBackOrganisation {
 
@@ -43,8 +47,12 @@ public class SearchOrganisationFragment extends Fragment implements SearchOrgani
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_search_organisation, container, false);
         updateViewDependencies(view);
-        mPresenter = new SearchOrganisationPresenter(this,getContext());
+        mPresenter = new SearchOrganisationPresenter(this, getContext());
         mPresenter.getLastSaveOrganisations();
+        RxSearch.fromSearchView(mSearchView)
+                .debounce(300, TimeUnit.MILLISECONDS)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(search -> mPresenter.getOrganisations(search));
         return view;
     }
 
@@ -83,7 +91,7 @@ public class SearchOrganisationFragment extends Fragment implements SearchOrgani
 
     @Override
     public void showSearch(String name) {
-        mSearchView.setQuery(name,false);
+        mSearchView.setQuery(name, false);
     }
 
     @Override
@@ -98,19 +106,6 @@ public class SearchOrganisationFragment extends Fragment implements SearchOrgani
         mRecyclerView = view.findViewById(R.id.recycler_view_search_organisation);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         mSearchView = view.findViewById(R.id.search_view_organisation);
-        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                // do something on text submit
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                mPresenter.getOrganisations(newText);
-                return false;
-            }
-        });
     }
 
     @Override
