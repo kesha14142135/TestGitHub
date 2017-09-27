@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="marginRecyclerView">10dp</dimen>
+    <dimen name="marginTextView">20dp</dimen>
+    <dimen name="textTitleSize">24sp</dimen>
+    <dimen name="card_view_margin">5dp</dimen>
+    <dimen name="cardViewElevation">4dp</dimen>
+    <dimen name="margin_card_movie">5dp</dimen>
+    <dimen name="imageViewMovieWidth">100dp</dimen>
+    <dimen name="imageViewFilmSearchHeight">100dp</dimen>
+    <dimen name="relativeLayoutMovieDescriptionMarginLeft">20dp</dimen>
+    <dimen name="layoutHeightName">50dp</dimen>
+    <dimen name="textSizeMovieName">12sp</dimen>
+    <dimen name="minHeight">70dp</dimen>
+</resources>

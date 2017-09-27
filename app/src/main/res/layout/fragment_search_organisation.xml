@@ -1,0 +1,45 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative_layout_base"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context="com.klg.testgithub.ui.SearchOrganisation.SearchOrganisationFragment">
+
+    <TextView
+        android:id="@+id/title_organisation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/marginTextView"
+        android:gravity="center"
+        android:text="@string/progect_name"
+        android:textSize="@dimen/textTitleSize"
+        android:textStyle="bold" />
+
+    <SearchView
+        android:id="@+id/search_view_organisation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:iconifiedByDefault="false"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/title_organisation"
+        android:queryHint="@string/git_hub_repository" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_search_organisation"
+        android:layout_below="@+id/search_view_organisation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/marginRecyclerView" />
+
+    <TextView
+        android:id="@+id/text_view_organisation_is_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/card_view_margin"
+        android:visibility="invisible"
+        android:text="@string/organisation_is_empty"/>
+</RelativeLayout>
+

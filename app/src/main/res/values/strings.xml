@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Test GitHub</string>
+    <string name="preferences">preferences</string>
+    <string name="search">search</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="can_not_get_data_from_server">Невозможно получить данные с сервера</string>
+    <string name="turn_on_internet">Включите интернет</string>
+    <string name="git_hub_repository">GitHub repository</string>
+    <string name="progect_name">Progect name</string>
+    <string name="organisation_name">Organisation name</string>
+    <string name="organisation_location">Location</string>
+    <string name="organisation_project">Project</string>
+    <string name="search_string_min_length">Поисковый запрос должен быть больше 3 символов</string>
+    <string name="organisation_is_empty">По данному запросу организаций не найдено</string>
+    <string name="company">Компани</string>
+    <string name="company_login">company_login</string>
+    <string name="repository_description">Description</string>
+    <string name="repository_name">Name</string>
+    <string name="repository_is_empty">Репозиториев не найдено</string>
+    <string name="error_server_responce">Сервер времено недоступен</string>
+    <string name="organisation_min_value">Введите больше трех символов для поиска</string>
+</resources>

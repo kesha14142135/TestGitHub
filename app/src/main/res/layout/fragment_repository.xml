@@ -1,0 +1,27 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative_layout_base"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.klg.testgithub.ui.Repository.RepositoryFragment">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout_repository"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_repository"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/text_view_repository_is_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/card_view_margin"
+            android:text="@string/repository_is_empty"
+            android:visibility="invisible" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+</RelativeLayout>

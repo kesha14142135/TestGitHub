@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/card_view_margin"
+    android:orientation="horizontal">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view_movie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_card_movie"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/image_view_organisation"
+                android:layout_width="@dimen/imageViewMovieWidth"
+                android:layout_height="@dimen/imageViewFilmSearchHeight"
+                android:src="@drawable/github_logo" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/relativeLayoutMovieDescriptionMarginLeft"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_view_name_organisation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:maxHeight="@dimen/layoutHeightName"
+                    android:text="@string/organisation_name"
+                    android:textSize="@dimen/textSizeMovieName"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/text_view_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/organisation_location"
+                    android:textSize="@dimen/textSizeMovieName" />
+
+                <TextView
+                    android:id="@+id/text_view_project"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/organisation_project"
+                    android:textColor="@color/colorBlue"
+                    android:textSize="@dimen/textSizeMovieName" />
+            </LinearLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="bottom"
+            android:background="@color/colorPrimaryDark"/>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>
